@@ -15,3 +15,10 @@ def is_prime(n):
   return True
 
 
+def fibonacci(n1, n2, limit):
+  list = []
+  while n2 < limit:
+    list.append(n2)
+    n1, n2 = n2, n1+n2
+
+  return list
