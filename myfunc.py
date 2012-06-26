@@ -40,10 +40,14 @@ def perfect_numbers(n):
     if (sum(divisors(i)) == i):
       list.append(i)
 
-
+  
+  return list
 
 def abundant_numbers(n):
   list = []
   for i in range(1,n):
     if (sum(divisors(i)) > i):
       list.append(i)
+
+
+  return list
