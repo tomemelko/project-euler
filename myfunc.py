@@ -72,3 +72,11 @@ def abundant_numbers(n):
 def shift_digits(n, dist):
   return int(str(n)[dist:] + str(n)[:dist])
     
+def prime_list(n):
+  list = range(2,n)
+  for i in list:
+    for n in list:
+      if not n == i:
+        if n % i == 0:
+          list.remove(n)
+  return set(list)
