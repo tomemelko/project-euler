@@ -1,13 +1,15 @@
 import myfunc
 
-list = range(1,28123)
-abund = myfunc.abundant_numbers(28123)
-for i in abund:
-  for j in abund[i:]:
-    if (i+j in list):
-      list.remove(i+j)
-      
-      
+n = 28123
+list = range(1,n)
+sum = 0
+abund = set()
+for i in list:
+  if (myfunc.divisors_count(i) > i):
+    abund.add(n)
+  for a in abund:
+    if not (n-a in abund):
+      sum += i
       
 
-print sum(list)
+print sum
