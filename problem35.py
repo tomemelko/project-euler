@@ -1,7 +1,9 @@
 import myfunc
 
 count = 0
-for i in range(2,100):
+for i in range(2,1000000):
+  if (float(i)/1000000 == int(i/1000000)):
+    print i/1000000,"%"
   if myfunc.is_prime(i):
     tmp = myfunc.shift_digits(i,1)
     circular = True
