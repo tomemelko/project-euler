@@ -70,5 +70,5 @@ def abundant_numbers(n):
   return list
 
 def shift_digits(n, dist):
-  return int(str(n[-dist:n-dist]))
+  return int(str(n)[dist:] + str(n)[:dist])
     
