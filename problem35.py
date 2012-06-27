@@ -6,8 +6,9 @@ for i in range(2,100):
     tmp = myfunc.shift_digits(i,1)
     circular = True
     while not tmp == i:
-      if not myfunc.is_prime(i):
+      if not myfunc.is_prime(tmp):
         circular = False
       tmp = myfunc.shift_digits(tmp, 1)
     if circular:
       count += 1
+print count
