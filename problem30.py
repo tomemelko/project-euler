@@ -1,7 +1,7 @@
-power = 4
+power = 5
 total = 0
 
-for i in range(2,10000):
+for i in range(2,1000000):
   sum = 0
   stri = str(i)
   for d in stri:
