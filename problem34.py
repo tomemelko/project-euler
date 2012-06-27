@@ -1,14 +1,15 @@
-from math import facotrial
+from math import factorial
 
 total = 0
 
-for i in range(3,200)
+for i in range(3,1000000):
   sum = 0
-  for d in str(i)
+  for d in str(i):
     sum += factorial(int(d))
-  if (sum == i)
+  if (sum == i):
     print i,"is awesome"
     total += i
+    
     
   
 
