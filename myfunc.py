@@ -34,10 +34,22 @@ def divisors(n):
     
   return list
 
+def divisors_count(n):
+  count = 1
+  for i in range(2, int(math.sqrt(n))+1):
+    if (n % i == 0):
+      count += i + n / i
+      
+      
+  if (math.sqrt(n) == int(math.sqrt(n))):
+    count -= math.sqrt(n)
+    
+  return count
+
 def perfect_numbers(n):
   list = []
   for i in range(1,n):
-    if (sum(divisors(i)) == i):
+    if (divisors_count(i) == i):
       list.append(i)
 
   
@@ -46,7 +58,12 @@ def perfect_numbers(n):
 def abundant_numbers(n):
   list = []
   for i in range(1,n):
-    if (sum(divisors(i)) > i):
+    if (len(list) != 0):
+      if (list[0] + list[-1] >= n):
+        break
+      
+      
+    if (divisors_count(i) > i):
       list.append(i)
 
 
