@@ -1,16 +1,18 @@
 import myfunc
 
 count = 0
-for i in range(2,1000000):
-  if (float(i)/1000000 == int(i/1000000)):
-    print i/1000000,"%"
-  if myfunc.is_prime(i):
-    tmp = myfunc.shift_digits(i,1)
-    circular = True
-    while not tmp == i:
-      if not myfunc.is_prime(tmp):
-        circular = False
-      tmp = myfunc.shift_digits(tmp, 1)
-    if circular:
-      count += 1
+print "Creating list"
+plist = myfunc.prime_list(1000000)
+print "Finished"
+for i in plist:
+  tmp = myfunc.shift_digits(i, 1)
+  circ = True
+  print "i=",i
+  while not tmp == i:
+    print tmp
+    if not tmp in plist:
+      circ = False
+    tmp = myfunc.shift_digits(tmp, 1)
+  if circ:
+    count += 1
 print count
