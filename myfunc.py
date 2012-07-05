@@ -48,6 +48,17 @@ def divisors_count(n):
     
   return count
 
+def prime_factors(n):
+  list = []
+  for i in prime_list():
+    if (i > n):
+      break
+    while (n % i == 0):
+      list.append(i)
+      n = n / i
+  return list
+                
+
 def perfect_numbers(n):
   list = []
   for i in range(1,n):
