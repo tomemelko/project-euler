@@ -80,3 +80,13 @@ def prime_list(n):
         if n % i == 0:
           list.remove(n)
   return set(list)
+
+def is_palindrome(n):
+  if len(n) == 1:
+    return True
+  for i in range((len(n)/2)+1):
+    if n[i] != n[len(n)-i-1]:
+      return False
+    
+  return True
+  
