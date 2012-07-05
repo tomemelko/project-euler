@@ -70,7 +70,7 @@ def abundant_numbers(n):
   return list
 
 def shift_digits(n, dist):
-  return int(str(n)[dist:] + str(n)[:dist])
+  return int(n[dist:] + n[:dist])
     
 def prime_list():
   #Note, this is a generator
