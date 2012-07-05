@@ -90,7 +90,7 @@ def prime_list():
       del D[q]
     q += 1
 
-def is_palindrome(n):
+def is_palindrome_slow(n):
   if len(n) == 1:
     return True
   for i in range((len(n)/2)+1):
@@ -99,3 +99,7 @@ def is_palindrome(n):
     
   return True
   
+def is_palindrome(n):
+  if n[::-1] == n:
+    return True
+  return False
