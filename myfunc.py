@@ -72,14 +72,21 @@ def abundant_numbers(n):
 def shift_digits(n, dist):
   return int(str(n)[dist:] + str(n)[:dist])
     
-def prime_list(n):
-  list = range(2,n)
-  for i in list:
-    for n in list:
-      if not n == i:
-        if n % i == 0:
-          list.remove(n)
-  return set(list)
+def prime_list():
+  #Note, this is a generator
+  #Sourced from:
+  #http://stackoverflow.com/a/568618
+  D = {}
+  q = 2
+  while True:
+    if q not in D:
+      yield q
+      D[q * q] = [q]
+    else:
+      for p in D[q]:
+        D.setdefault(p + q, []).append(p)
+      del D[q]
+    q += 1
 
 def is_palindrome(n):
   if len(n) == 1:
