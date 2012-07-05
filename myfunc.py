@@ -1,3 +1,4 @@
+import operator
 import math
 
 def is_prime(n):
@@ -114,3 +115,12 @@ def is_palindrome(n):
   if n[::-1] == n:
     return True
   return False
+
+def lcm(a):
+  res = []
+  for i in a:
+    factors = prime_factors(i)
+    for j in factors:
+      while (res.count(j) < factors.count(j)):
+        res.append(j)
+  return reduce(operator.mul, res)
