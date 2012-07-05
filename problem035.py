@@ -1,16 +1,13 @@
 import myfunc
 
 count = 0
-print "Creating list"
-plist = myfunc.prime_list(1000000)
-print "Finished"
-for i in plist:
-  tmp = myfunc.shift_digits(i, 1)
+for i in myfunc.prime_list():
+  if i > 1000000:
+    break
+  tmp = myfunc.shift_digits(str(i), 1)
   circ = True
-  print "i=",i
-  while not tmp == i:
-    print tmp
-    if not tmp in plist:
+  while int(tmp) != i:
+    if not myfunc.is_prime(int(tmp)):
       circ = False
     tmp = myfunc.shift_digits(tmp, 1)
   if circ:
