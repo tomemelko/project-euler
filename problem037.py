@@ -2,9 +2,11 @@ from myfunc import is_prime
 
 sum = 0
 count = 0
-for n in range(9,40000):
+for n in range(9,1000000):
   trunc = True
   i = n
+  if count == 11:
+    break
   while len(str(i)) != 0:
     if not is_prime(i):
       trunc = False
