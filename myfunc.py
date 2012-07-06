@@ -117,3 +117,13 @@ def collatz_count(n):
       n = (3*n)+1
     count += 1
   return count      
+
+def collatz_count_cached(q,n): #Returns a dict with all the numbers from q to n
+  cache = dict()
+  for i in xrange(q,n):
+    step = collatz(i).next()
+    if (step in cache):
+      cache[i] = cache.get(step) + 1
+    else:
+      cache[i] = collatz_count(i)
+  return cache
