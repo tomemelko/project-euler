@@ -6,17 +6,12 @@ def is_prime(n):
     return False
   if (n == 2):
     return True
-
   if (n % 2 == 0):
     return False
-
   for i in range(3, int(math.sqrt(n))+1, 2):
     if (n % i == 0):
       return False
-
-    
   return True
-
 
 def fibonacci(n1, n2, limit):
   while n2 < limit:
@@ -57,6 +52,12 @@ def abundant_numbers(n):
 
 def shift_digits(n, dist):
   return n[dist:] + n[:dist]
+  
+def sum_of_digits(n):
+  sum = 0
+  for i in str(n):
+    sum += int(i)
+  return sum
     
 def prime_list():
   #Note, this is a generator
