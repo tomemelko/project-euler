@@ -124,3 +124,6 @@ def lcm(a):
       while (res.count(j) < factors.count(j)):
         res.append(j)
   return reduce(operator.mul, res)
+
+def triangle(n):
+  return sum(xrange(n+1))
