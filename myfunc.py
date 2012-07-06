@@ -19,24 +19,15 @@ def is_prime(n):
 
 
 def fibonacci(n1, n2, limit):
-  list = []
   while n2 < limit:
-    #print "Adding ",n2
-    #print "Is the", len(list), "th term with length", len(str(n2))
-    list.append(n2)
+    yield n2
     n1, n2 = n2, n1+n2
-
-  return list
   
 def divisors(n):
-  list = []
   for i in range(1,(n/2)+1):
     if (n % i == 0):
-      list.append(i)
-      
+      yield i      
     
-  return list
-
 def divisors_count(n):
   count = 0
   for i in range(1, (n/2)+1):
@@ -46,38 +37,22 @@ def divisors_count(n):
   return count
 
 def prime_factors(n):
-  list = []
   for i in prime_list():
     if (i > n):
       break
     while (n % i == 0):
-      list.append(i)
+      yield i
       n = n / i
-  return list
                 
-
 def perfect_numbers(n):
-  list = []
-  for i in range(1,n):
+  for i in xrange(1,n):
     if (divisors_count(i) == i):
-      list.append(i)
-
-  
-  return list
+      yield i
 
 def abundant_numbers(n):
-  list = []
-  for i in range(1,n):
-    if (len(list) != 0):
-      if (list[0] + list[-1] >= n):
-        break
-      
-      
-    if (divisors_count(i) > i):
-      list.append(i)
-
-
-  return list
+  for i in xrange(n):
+    if (sum(divisors(i)) > i):
+      yield i
 
 def shift_digits(n, dist):
   return n[dist:] + n[:dist]
