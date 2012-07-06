@@ -29,11 +29,12 @@ def divisors(n):
       yield i      
     
 def divisors_count(n):
-  count = 0
-  for i in range(1, (n/2)+1):
+  count = 2
+  for i in range(2, int(math.floor(n**.5))):
     if (n % i == 0):
-      count += 1
-    
+      count += 2
+      if (n / i == i):
+        count -=1
   return count
 
 def prime_factors(n):
@@ -97,4 +98,4 @@ def lcm(a):
   return reduce(operator.mul, res)
 
 def triangle(n):
-  return sum(xrange(n+1))
+  return (n+1)*n/2
