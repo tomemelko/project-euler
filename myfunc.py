@@ -38,14 +38,10 @@ def divisors(n):
   return list
 
 def divisors_count(n):
-  count = 1
-  for i in range(2, int(math.sqrt(n))+1):
+  count = 0
+  for i in range(1, (n/2)+1):
     if (n % i == 0):
-      count += i + n / i
-      
-      
-  if (math.sqrt(n) == int(math.sqrt(n))):
-    count -= math.sqrt(n)
+      count += 1
     
   return count
 
