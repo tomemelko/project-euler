@@ -5,5 +5,4 @@ while (len(tri) > 1):
   for i in xrange(len(tri)-1):
     tri[-2][i] += max(bot_row[i:i+2])
   del tri[-1]
-
 print tri[0][0]
