@@ -128,3 +128,11 @@ def collatz_count_cached(q,n): #Returns a dict with all the numbers from q to n
     else:
       cache[i] = collatz_count(i)
   return cache
+
+def is_pandigital(n, length):
+  if (len(str(n)) != length):
+    return False
+  for i in xrange(1,length+1):
+    if (str(n).count(str(i)) != 1):
+      return False
+  return True
