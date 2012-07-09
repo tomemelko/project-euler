@@ -59,13 +59,15 @@ def sum_of_digits(n):
     sum += int(i)
   return sum
     
-def prime_list():
+def prime_list(n):
   #Note, this is a generator
   #Sourced from:
   #http://stackoverflow.com/a/568618
   D = {}
   q = 2
   while True:
+    if q > n:
+      break
     if q not in D:
       yield q
       D[q * q] = [q]
