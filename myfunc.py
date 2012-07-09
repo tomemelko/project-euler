@@ -131,6 +131,9 @@ def collatz_count_cached(q,n): #Returns a dict with all the numbers from q to n
       cache[i] = collatz_count(i)
   return cache
 
+def solve_quadratic(a, b, c):
+  return [((-1*b)-((b**2)-4*a*c)**.5)/(2*a),((-1*b)+((b**2)-4*a*c)**.5)/(2*a)]
+
 def is_pandigital(n, length):
   if (len(str(n)) != length):
     return False
@@ -138,3 +141,22 @@ def is_pandigital(n, length):
     if (str(n).count(str(i)) != 1):
       return False
   return True
+
+def is_triangular(Tn):
+  #Tn = n(n+1)/2
+  #0 = n^2 + n - 2Tn
+  sol = max(solve_quadratic(1,1,-2*Tn))
+  return sol == int(sol)
+
+def is_pentagonal(Pn):
+  #Pn = n(3n-1)/2
+  #0 = 3(n^2)-n -2Pn
+  sol = max(solve_quadratic(3,-1,-2*Pn))
+  return sol == int(sol)
+    
+def is_hexagonal(Hn):
+  #Hn = n(2n-1)
+  #0 = 2(n^2) - n - Hn
+  sol = max(solve_quadratic(2,-1,-Hn))
+  return sol == int(sol)
+    
