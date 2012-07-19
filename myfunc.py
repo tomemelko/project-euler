@@ -8,7 +8,7 @@ def is_prime(n):
     return True
   if (n % 2 == 0):
     return False
-  for i in range(3, int(n**.5)+1, 2):
+  for i in xrange(3, int(n**.5)+1, 2):
     if (n % i == 0):
       return False
   return True
@@ -19,13 +19,13 @@ def fibonacci(n1, n2, limit):
     n1, n2 = n2, n1+n2
   
 def divisors(n):
-  for i in range(1,(n/2)+1):
+  for i in xrange(1,(n/2)+1):
     if (n % i == 0):
       yield i      
     
 def divisors_count(n):
   count = 2
-  for i in range(2, int(math.floor(n**.5))):
+  for i in xrange(2, int(math.floor(n**.5))):
     if (n % i == 0):
       count += 2
       if (n / i == i):
